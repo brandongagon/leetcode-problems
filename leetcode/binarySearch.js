@@ -10,7 +10,7 @@ function binarySearch(arr, target) {
         } else if (arr[middle] > target) {
             // search left side
             end = middle - 1;
-        } else if (arr[middle] === target) {
+        } else {
             return middle;
         }
     }
@@ -19,5 +19,5 @@ function binarySearch(arr, target) {
     return -1;
 }
 
-console.log(binarySearch[1,2,3,4], 1);
-console.log(binarySearch[1,2,3,5,9], 4);
+console.log(binarySearch([1,2,3,4], 1));
+console.log(binarySearch([1,2,3,5,9], 4));
