@@ -1,4 +1,4 @@
-# mypal
-test repo
+# Leetcode Problems
 
-test update
+### A collection of fun leetcode problems in Javascript / Typescript
+
