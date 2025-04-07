@@ -7,8 +7,9 @@ function compress(chars) {
     return 0;
   }
 
-  let read = 0;
-  let write = 0;
+  // Init pointers
+  let read = 0; // pointer to read characters
+  let write = 0; // pointer to write compressed characters
 
   while (read < chars.length) {
     const currentChar = chars[read];
@@ -24,7 +25,9 @@ function compress(chars) {
     chars[write] = currentChar;
     write++;
 
+    // write count if greater than 1
     if (count > 1) {
+      // Convert count to string and write each digit
       const countStr = count.toString();
       for (let i=0;i<countStr.length;i++) {
         chars[write] = countStr[i];
