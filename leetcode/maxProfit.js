@@ -1,5 +1,7 @@
 /*
  Best time to buy and sell a stock
+ Time: O(n)
+ Memory: O(1)
 */
 
 function maxProfit(prices) {
