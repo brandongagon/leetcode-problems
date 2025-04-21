@@ -1,4 +1,8 @@
-// recursive fibonacci solution
+/*
+recursive fibonacci solution
+Time: O(2^n)
+Memory: O(n)
+*/
 function fibonacci(n) {
   if (n <= 1) {
     return n;
