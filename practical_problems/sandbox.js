@@ -1,49 +1,85 @@
+const games = [
+  { title: "Call of Honor", releaseDate: "2025-06-01" },
+  { title: "Call  of Honor", releaseDate: "2025-06-01" },
+  { title: "Call-of-Honor", releaseDate: "2025-06-01" },
+  { title: "Star Jumpers", releaseDate: "2025-05-20" },
+  { title: "StarJumpers", releaseDate: "2025-05-20" }
+];
+
+let str = "Star-Jumpers";
+//console.log(str.includes('-'));
+
+const r = format(games);
+console.log(r.length);
+
+function format(games) {
+  let formatted = games.map((game) => {
+    if (game.title.includes('-')) {
+      return {
+        title: game.title,
+        formatted: game.title.split('-').join('').toLowerCase(),
+        releaseDate: game.releaseDate
+      }
+    } else {
+      return {
+        title: game.title,
+        formatted: game.title.split('').join('').toLowerCase(),
+        releaseDate: game.releaseDate
+      }
+    }
+  });
+
+  console.log(formatted);
+  return formatted;
+}
+
 
 /*
 
 */
 
-const games = [
-  { title: "Shadowfall", releaseDate: "2025-01-15" },
-  { title: "Sky Edge", releaseDate: "2025-03-10" },
-  { title: "Shadowfall", releaseDate: "2025-06-22" }, // duplicate title
-  { title: "Sky Edge", releaseDate: "2025-07-01" },   // duplicate title
-  { title: "Mystic Run", releaseDate: "2025-02-01" }
-];
+// const games = [
+//   { title: "Shadowfall", releaseDate: "2025-01-15" },
+//   { title: "Sky Edge", releaseDate: "2025-03-10" },
+//   { title: "Shadowfall", releaseDate: "2025-06-22" }, // duplicate title
+//   { title: "Sky Edge", releaseDate: "2025-07-01" },   // duplicate title
+//   
+// { title: "Mystic Run", releaseDate: "2025-02-01" }
+// ];
 
-const r = deduplicateGames(games);
-console.log(r);
+// const r = deduplicateGames(games);
+// console.log(r);
 
-function deduplicateGames(games) {
-  let uniqueTitles = new Set();
-  let uniqueGames = [];
+// function deduplicateGames(games) {
+//   let uniqueTitles = new Set();
+//   let uniqueGames = [];
 
-  for (let game of games) {
-    uniqueTitles.add(game.title);
-  }
+//   for (let game of games) {
+//     uniqueTitles.add(game.title);
+//   }
 
-  uniqueTitles.forEach((title) => {
-    uniqueGame = games.filter(g => g.title === title)
-    uniqueGames.push(uniqueGame[0]);
-  });
+//   uniqueTitles.forEach((title) => {
+//     uniqueGame = games.filter(g => g.title === title)
+//     uniqueGames.push(uniqueGame[0]);
+//   });
 
-  return uniqueGames;
-}
+//   return uniqueGames;
+// }
 
-// BETER VERSION
-function deduplicateGames(games) {
-  const seenTitles = new Set();
-  const uniqueGames = [];
+// // BETER VERSION
+// function deduplicateGames(games) {
+//   const seenTitles = new Set();
+//   const uniqueGames = [];
 
-  for (let game of games) {
-    if (!seenTitles.has(game.title)) {
-      seenTitles.add(game.title);
-      uniqueGames.push(game);
-    }
-  }
+//   for (let game of games) {
+//     if (!seenTitles.has(game.title)) {
+//       seenTitles.add(game.title);
+//       uniqueGames.push(game);
+//     }
+//   }
 
-  return uniqueGames;
-}
+//   return uniqueGames;
+// }
 
 
 
